@@ -18,7 +18,7 @@ body{
     width: 100%;
     min-height: 120px;
     font-weight: bold;
-    text-align: center;
+    text-align: center;    
 }
 
 .red{
@@ -42,13 +42,14 @@ body{
         width: 98%;
         margin: 1% 1% 1% 1%;
     }
+
 }
 
 @media (min-width: 706px){
     .contains{
         display: grid;
         grid-template-columns: 20% 20% 20% 20% 20%;
-        grid-template-rows: 20% 20% 20% 20% 20%;
+        grid-template-rows: 30% 30% 30%;
     }
     
     .card {
@@ -56,15 +57,26 @@ body{
         width: 98%;
     }
 
+    .card p{
+        align-self: center;
+    }
+
     .blue{
-        grid-area: 1 / 3 / span 3 / 3;
+        grid-column: 3 / 3;
+        grid-row: 1 / span2;
+        display: flexbox;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-
+    
     .yellow{
-        grid-area: 2 / 4 / span 2 / span 2;
-    }
-
-    p{
-        vertical-align: middle;
+        grid-column: 4 / span 2;
+        grid-row: 2 / span 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
