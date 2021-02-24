@@ -16,6 +16,7 @@ body{
     padding: 7px;
     font-size: 25px;
     width: 100%;
+    min-height: 120px;
     font-weight: bold;
     text-align: center;
 }
@@ -34,7 +35,6 @@ body{
 
 @media (min-width: 500px){
     .contains{
-        display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
@@ -42,22 +42,9 @@ body{
         width: 98%;
         margin: 1% 1% 1% 1%;
     }
-    
-    .blue{
-        padding-top: 20px;
-    }
-
 }
 
-@media (min-width: 643px){
-    .yellow{
-        padding-top: 20px;
-    }
-
-    
-}
-
-@media (min-width: 740px){
+@media (min-width: 706px){
     .contains{
         display: grid;
         grid-template-columns: 20% 20% 20% 20% 20%;
@@ -65,9 +52,8 @@ body{
     }
     
     .card {
-        margin: 1% 0;
-        padding: 2%;
-        width: 94%;
+        margin: 1%;
+        width: 98%;
     }
 
     .blue{
