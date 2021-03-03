@@ -8,7 +8,7 @@ class Note {
   createElement(title) {
     let newNote = document.createElement("li");
     newNote.addEventListener('click', this.remove.bind(newNote));
-    this.innerHTML = title;
+    
 
     // HINT🤩 newNote.addEventListener('click', this.remove.bind(newNote));
 
@@ -17,7 +17,8 @@ class Note {
 
   add() {
     console.log("Add");
-    // let notes = document.querySelector("#taskList").appendChild(newNote);
+    let notes = document.querySelector("#taskList").appendChild(this.element);
+    notes.innerHTML = this.title;
     // HINT🤩
     // this function should append the note to the screen somehow
   }
