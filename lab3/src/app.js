@@ -35,6 +35,9 @@ class App {
   constructor() {
     console.log("👊🏼 The Constructor!");
 
+    this.txtTodo = document.querySelector("#taskInput");
+    this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
+
     // HINT🤩
     // pressing the enter key in the text field triggers the createNote function
     // this.txtTodo = ???
