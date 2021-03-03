@@ -80,10 +80,17 @@ class App {
   loadNotesFromStorage() {
     if (localStorage.getItem('noteArray') != null){
       let cardsArray = JSON.parse(localStorage.getItem('noteArray'));
-      for (let i = 0; i < cardsArray.length; i++) {
-        let stickyNote = new Note(cardsArray[i]);
+
+      cardsArray.forEach(j => {
+        let stickyNote = new Note(j);
+        console.log(j);
         stickyNote.add();
-      }
+      })
+
+      // for (let i = 0; i < cardsArray.length; i++) {
+      //   let stickyNote = new Note(cardsArray[i]);
+      //   stickyNote.add();
+      // }
     }
     
     // HINT🤩

@@ -100,11 +100,14 @@ var App = /*#__PURE__*/function () {
     value: function loadNotesFromStorage() {
       if (localStorage.getItem('noteArray') != null) {
         var cardsArray = JSON.parse(localStorage.getItem('noteArray'));
-
-        for (var i = 0; i < cardsArray.length; i++) {
-          var stickyNote = new Note(cardsArray[i]);
+        cardsArray.forEach(function (j) {
+          var stickyNote = new Note(j);
+          console.log(j);
           stickyNote.add();
-        }
+        }); // for (let i = 0; i < cardsArray.length; i++) {
+        //   let stickyNote = new Note(cardsArray[i]);
+        //   stickyNote.add();
+        // }
       } // HINT🤩
       // load all notes from storage here and add them to the screen
 
