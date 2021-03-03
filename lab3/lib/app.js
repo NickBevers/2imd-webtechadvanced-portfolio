@@ -11,13 +11,14 @@ var Note = /*#__PURE__*/function () {
     _classCallCheck(this, Note);
 
     this.title = title;
-    this.element = createElement(this.title); // HINT🤩 this.element = this.createElement(title);
+    this.element = this.createElement(this.title); // HINT🤩 this.element = this.createElement(title);
   }
 
   _createClass(Note, [{
     key: "createElement",
     value: function createElement(title) {
-      var newNote = document.createElement("li"); // HINT🤩 newNote.addEventListener('click', this.remove.bind(newNote));
+      var newNote = document.createElement("li");
+      newNote.addEventListener('click', this.remove.bind(newNote)); // HINT🤩 newNote.addEventListener('click', this.remove.bind(newNote));
 
       return newNote;
     }
