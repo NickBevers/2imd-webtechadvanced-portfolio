@@ -56,7 +56,11 @@ class App {
 
   createNote(e) {
     if (e.key === "Enter"){
-      this.reset;
+      console.log("Enter works");
+      // Note.add(this.txtTodo.value);
+      // Note.saveToStorage();
+
+      // this.reset;
       e.preventDefault();
     }
     // this function should create a new note by using the Note() class
