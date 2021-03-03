@@ -10,7 +10,8 @@ var Note = /*#__PURE__*/function () {
   function Note(title) {
     _classCallCheck(this, Note);
 
-    this.title = title; // HINT🤩 this.element = this.createElement(title);
+    this.title = title;
+    this.element = createElement(this.title); // HINT🤩 this.element = this.createElement(title);
   }
 
   _createClass(Note, [{
@@ -49,7 +50,8 @@ var App = /*#__PURE__*/function () {
 
     console.log("👊🏼 The Constructor!");
     this.txtTodo = document.querySelector("#taskInput");
-    this.txtTodo.addEventListener("keypress", this.createNote.bind(this)); // HINT🤩
+    this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
+    this.loadNotesFromStorage(); // HINT🤩
     // pressing the enter key in the text field triggers the createNote function
     // this.txtTodo = ???
     // this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
@@ -65,16 +67,26 @@ var App = /*#__PURE__*/function () {
     }
   }, {
     key: "createNote",
-    value: function createNote(e) {// this function should create a new note by using the Note() class
+    value: function createNote(e) {
+      if (e.key === "Enter") {
+        console.log("Enter works"); // Note.add(this.txtTodo.value);
+        // Note.saveToStorage();
+        // this.reset();
+
+        e.preventDefault();
+      } // this function should create a new note by using the Note() class
       // HINT🤩
       // note.add();
       // note.saveToStorage();
       // clear the text field with .reset in this class
       // if (e.key === "Enter")
+
     }
   }, {
     key: "reset",
-    value: function reset() {// this function should reset the form / clear the text field
+    value: function reset() {
+      // this function should reset the form / clear the text field
+      this.txtTodo.value = "";
     }
   }]);
 

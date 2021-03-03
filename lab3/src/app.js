@@ -1,6 +1,7 @@
 class Note {
   constructor(title) {
     this.title = title;
+    this.element = createElement(this.title)
     // HINT🤩 this.element = this.createElement(title);
   }
 
@@ -13,6 +14,7 @@ class Note {
   }
 
   add() {
+
     // HINT🤩
     // this function should append the note to the screen somehow
   }
@@ -47,6 +49,8 @@ class App {
     // read up on .bind() -> we need to pass the current meaning of this to the eventListener
     // when the app loads, we can show previously saved noted from localstorage
     // this.loadNotesFromStorage();
+
+    
   }
 
   loadNotesFromStorage() {
@@ -60,7 +64,7 @@ class App {
       // Note.add(this.txtTodo.value);
       // Note.saveToStorage();
 
-      // this.reset;
+      // this.reset();
       e.preventDefault();
     }
     // this function should create a new note by using the Note() class
