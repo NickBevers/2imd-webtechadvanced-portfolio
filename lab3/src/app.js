@@ -39,6 +39,17 @@ class Note {
   }
 
   remove() {
+    //get index of clicked li-item in ul
+    let unordenedList = document.querySelector("#taskList");
+    const index = [...unordenedList.childNodes].indexOf(this);
+
+    //remove item from local storage using index found earlier
+    let nArray = JSON.parse(localStorage.getItem('noteArray'));
+    nArray.splice(index, 1);
+    localStorage.setItem('noteArray', JSON.stringify(nArray));
+
+    document.querySelector("#taskList").removeChild(this);  
+    
     // HINT🤩 the meaning of 'this' was set by bind() in the createElement function
     // in this function, 'this' will refer to the current note element
     // .removeChild(this)
@@ -69,7 +80,7 @@ class App {
   loadNotesFromStorage() {
     if (localStorage.getItem('noteArray') != null){
       let cardsArray = JSON.parse(localStorage.getItem('noteArray'));
-      for (let i = cardsArray.length-1; i > 0; i--) {
+      for (let i = 0; i < cardsArray.length; i++) {
         let stickyNote = new Note(cardsArray[i]);
         stickyNote.add();
       }
@@ -102,6 +113,7 @@ class App {
   reset() {
     // this function should reset the form / clear the text field
     this.txtTodo.value = "";
+
   }
 }
 
