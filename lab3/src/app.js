@@ -8,6 +8,7 @@ class Note {
   createElement(title) {
     let newNote = document.createElement("li");
     newNote.addEventListener('click', this.remove.bind(newNote));
+    this.innerHTML = title;
 
     // HINT🤩 newNote.addEventListener('click', this.remove.bind(newNote));
 
@@ -16,6 +17,7 @@ class Note {
 
   add() {
     console.log("Add");
+    // let notes = document.querySelector("#taskList").appendChild(newNote);
     // HINT🤩
     // this function should append the note to the screen somehow
   }
@@ -64,10 +66,9 @@ class App {
       console.log("Enter works");
       let textVal = this.txtTodo.value;
 
-      let newNote = new Note();
-      newNote.createElement(textVal);
-      newNote.add(textVal);
-      Note.saveToStorage();
+      let newNote = new Note(textVal);
+      newNote.add();
+      newNote.saveToStorage();
 
       this.reset();
       e.preventDefault();

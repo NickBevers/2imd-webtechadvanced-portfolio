@@ -18,14 +18,16 @@ var Note = /*#__PURE__*/function () {
     key: "createElement",
     value: function createElement(title) {
       var newNote = document.createElement("li");
-      newNote.addEventListener('click', this.remove.bind(newNote)); // HINT🤩 newNote.addEventListener('click', this.remove.bind(newNote));
+      newNote.addEventListener('click', this.remove.bind(newNote));
+      this.innerHTML = title; // HINT🤩 newNote.addEventListener('click', this.remove.bind(newNote));
 
       return newNote;
     }
   }, {
     key: "add",
     value: function add() {
-      console.log("Add"); // HINT🤩
+      console.log("Add"); // let notes = document.querySelector("#taskList").appendChild(newNote);
+      // HINT🤩
       // this function should append the note to the screen somehow
     }
   }, {
@@ -73,10 +75,9 @@ var App = /*#__PURE__*/function () {
       if (e.key === "Enter") {
         console.log("Enter works");
         var textVal = this.txtTodo.value;
-        var newNote = new Note();
-        newNote.createElement(textVal);
-        newNote.add(textVal);
-        Note.saveToStorage();
+        var newNote = new Note(textVal);
+        newNote.add();
+        newNote.saveToStorage();
         this.reset();
         e.preventDefault();
       } // this function should create a new note by using the Note() class
