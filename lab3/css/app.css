@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open + Sans:400, 300, 600);
+@import url("https://fonts.googleapis.com/css?family=Open + Sans:400, 300, 600");
 * {
   padding: 0;
   margin: 0;
@@ -19,6 +19,7 @@ body {
 }
 #taskIOSection {
 }
+
 #taskInput {
   font-size: 14px;
   font-family: "Open Sans", sans-serif;

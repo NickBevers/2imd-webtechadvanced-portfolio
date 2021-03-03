@@ -38,6 +38,8 @@ class App {
     this.txtTodo = document.querySelector("#taskInput");
     this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
 
+    this.loadNotesFromStorage();
+
     // HINT🤩
     // pressing the enter key in the text field triggers the createNote function
     // this.txtTodo = ???
@@ -53,6 +55,10 @@ class App {
   }
 
   createNote(e) {
+    if (e.key === "Enter"){
+      this.reset;
+      e.preventDefault();
+    }
     // this function should create a new note by using the Note() class
     // HINT🤩
     // note.add();
@@ -63,6 +69,7 @@ class App {
 
   reset() {
     // this function should reset the form / clear the text field
+    this.txtTodo.value = "";
   }
 }
 
