@@ -23,7 +23,9 @@ class Note {
     // this function should append the note to the screen somehow
   }
 
-  saveToStorage() {
+  saveToStorage() {   
+    localStorage.setItem(0, this.title);
+    console.log("storage saved");
     // HINT🤩
     // localStorage only supports strings, not arrays
     // if you want to store arrays, look at JSON.parse and JSON.stringify
