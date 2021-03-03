@@ -15,7 +15,7 @@ class Note {
   }
 
   add() {
-
+    console.log("Add");
     // HINT🤩
     // this function should append the note to the screen somehow
   }
@@ -62,10 +62,14 @@ class App {
   createNote(e) {
     if (e.key === "Enter"){
       console.log("Enter works");
-      // Note.add(this.txtTodo.value);
-      // Note.saveToStorage();
+      let textVal = this.txtTodo.value;
 
-      // this.reset();
+      let newNote = new Note();
+      newNote.createElement(textVal);
+      newNote.add(textVal);
+      Note.saveToStorage();
+
+      this.reset();
       e.preventDefault();
     }
     // this function should create a new note by using the Note() class

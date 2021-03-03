@@ -24,7 +24,8 @@ var Note = /*#__PURE__*/function () {
     }
   }, {
     key: "add",
-    value: function add() {// HINT🤩
+    value: function add() {
+      console.log("Add"); // HINT🤩
       // this function should append the note to the screen somehow
     }
   }, {
@@ -70,10 +71,13 @@ var App = /*#__PURE__*/function () {
     key: "createNote",
     value: function createNote(e) {
       if (e.key === "Enter") {
-        console.log("Enter works"); // Note.add(this.txtTodo.value);
-        // Note.saveToStorage();
-        // this.reset();
-
+        console.log("Enter works");
+        var textVal = this.txtTodo.value;
+        var newNote = new Note();
+        newNote.createElement(textVal);
+        newNote.add(textVal);
+        Note.saveToStorage();
+        this.reset();
         e.preventDefault();
       } // this function should create a new note by using the Note() class
       // HINT🤩
