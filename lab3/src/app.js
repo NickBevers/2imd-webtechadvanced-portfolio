@@ -72,9 +72,7 @@ class App {
     // this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
     // read up on .bind() -> we need to pass the current meaning of this to the eventListener
     // when the app loads, we can show previously saved noted from localstorage
-    // this.loadNotesFromStorage();
-
-    
+    // this.loadNotesFromStorage(); 
   }
 
   loadNotesFromStorage() {
