@@ -6,10 +6,24 @@ body{
 .title{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 24px;
+    height: 24px;
 }
 
 .ad{
     width: 336px;
     height: 280px;
-    margin-left: 15px;
+    margin-left: 65px;
+}
+
+.coin{
+    background-color: #3DC4FF;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.prices{
+    display: flex;
+    margin: 10px;
+    width: 400px;
+    justify-content: space-evenly;
 }
