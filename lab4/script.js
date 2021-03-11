@@ -27,7 +27,7 @@ class App{
             let dollar = data.rates.USD;
             let yen = data.rates.JPY;
 
-            if (cases > 4000) {
+            if (cases > 3000) {
                 let price = 8.9;
                 console.log(cases);
                 this.setPrice(cases, price, pound, dollar, yen);
@@ -42,7 +42,7 @@ class App{
     }
 
     setAd(cases){
-        if (cases > 4000){
+        if (cases > 3000){
             document.querySelector(".ad").style.backgroundImage = "url(https://media.s-bol.com/RLLj3q3W9LGO/550x412.jpg)";
             document.querySelector(".ad").style.backgroundSize = "contain";
             document.querySelector(".ad").style.backgroundRepeat = "no-repeat";
