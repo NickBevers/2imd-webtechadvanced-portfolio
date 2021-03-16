@@ -7,12 +7,23 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 24px;
     height: 24px;
+    max-width: 400px;
+    margin-left: 20px
+}
+
+.desc{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-width: 400px;
+    margin-left: 20px;
+    margin-top: 50px;
 }
 
 .ad{
     width: 336px;
     height: 280px;
     margin-left: 65px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .coin{
@@ -26,4 +37,29 @@ body{
     margin: 10px;
     width: 400px;
     justify-content: space-evenly;
+}
+
+.buy{
+    width: 100px;
+    height: 30px;
+    margin-top: 35px;
+    margin-left: 150px;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 50px;
+    background-color: #0275AF;
+}
+
+.buy a{
+    text-decoration: none;
+    color: beige;
+}
+
+.shop{
+    background-image: url("/assets/logo_bol.png");
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 80px;
 }
