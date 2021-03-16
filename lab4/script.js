@@ -47,7 +47,7 @@ class App{
             document.querySelector(".ad").style.backgroundSize = "contain";
             document.querySelector(".ad").style.backgroundRepeat = "no-repeat";
             document.querySelector("#buyLink").setAttribute("href", "https://bit.ly/2OYMHTO");
-            document.querySelector(".desc").innerHTML = "Er zijn weer heel wat corona-gevallen bijgekomen in België. Bescherm jezelf nu!"
+            document.querySelector(".desc").innerHTML = `Er zijn vandaag ${cases} corona-gevallen bijgekomen in België. Bescherm jezelf nu!`
         }
         else{
             document.querySelector(".ad").style.backgroundImage = "url(https://media.s-bol.com/g2PG1K4qqEL6/497x840.jpg)";
@@ -55,7 +55,7 @@ class App{
             document.querySelector(".ad").style.backgroundSize = "contain";
             document.querySelector(".ad").style.backgroundRepeat = "no-repeat";
             document.querySelector("#buyLink").setAttribute("href", "http://bit.ly/3cAvMPl");
-            document.querySelector(".desc").innerHTML = "Hoera, er is een daling in de corona-cijfers in België. Vier het nu!"
+            document.querySelector(".desc").innerHTML = `Hoera, er is een daling in de corona-cijfers in België. Vandaag zijn er slechts ${cases} gevallen bijgekomen. Vier het nu!`
         }
     }
 
