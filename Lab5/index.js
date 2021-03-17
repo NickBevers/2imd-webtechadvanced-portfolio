@@ -48,7 +48,10 @@ app.put("/api/v1/messages/:id", (req, res) => {
 })
 
 app.delete("/api/v1/messages/:id", (req, res) => {
-  res.send("/api/v1/messages")
+  let id = req.params.id;
+  res.json({
+    message: `DELETING a message with id ${id}`
+  })
   //(met mongoDb) Kan een message met id verwijderen en geeft een response terug {“status”: “success”, “message”: “The message was removed”}
   //(zonder mongoDb) Response kan zij: {“message”: “DELETING a message with id id”}
 }) 
