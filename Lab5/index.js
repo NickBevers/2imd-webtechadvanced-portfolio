@@ -3,20 +3,20 @@ const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-  res.send('/')
+  app.set("view engine", "pug");
+  res.render("index", { title: "Lab 5 of NIck" });
 })
 
 app.get("/api/v1/messages", (req, res) => {
   res.send("/api/v1/messages")
-  //homepage pug
-
+  //Geef messages terug (met mongoDB)
+  //(zonder mongoDb) Response kan zijn : { “message”: “GETTING messages” }
+  //geef ook effectief messages terug uit je databank (of statisch)
 }) 
 
 app.get("/api/v1/messages/:id", (req, res) => {
   res.send("/api/v1/messages")
-  //Geef messages terug (met mongoDB)
-  //(zonder mongoDb) Response kan zijn : { “message”: “GETTING messages” }
-  //geef ook effectief messages terug uit je databank (of statisch)
+
 }) 
 
 app.post("/api/v1/messages", (req, res) => {
@@ -27,13 +27,13 @@ app.post("/api/v1/messages", (req, res) => {
   //Zorg dat je de naam dynamisch kan invullen en in het antwoord teruggeeft
 }) 
 
-app.put("/api/v1/messages", (req, res) => {
+app.put("/api/v1/messages/:id", (req, res) => {
   res.send("/api/v1/messages")
   //(met mongoDb) Kan een JSON-object ontvangen en een specifiek bericht updaten en geeft die nieuwe bericht terug
   //(zonder MongoDb) Response kan zijn: {“message”: “UPDATING a message with id id”}
 })
 
-app.delete("/api/v1/messages", (req, res) => {
+app.delete("/api/v1/messages/:id", (req, res) => {
   res.send("/api/v1/messages")
   //(met mongoDb) Kan een message met id verwijderen en geeft een response terug {“status”: “success”, “message”: “The message was removed”}
   //(zonder mongoDb) Response kan zij: {“message”: “DELETING a message with id id”}
@@ -41,9 +41,9 @@ app.delete("/api/v1/messages", (req, res) => {
 
 app.get("/api/v1/messages?user=username", (req, res) => {
   res.send("/api/v1/messages")
-//(met mongoDb) Kan berichten teruggeven voor een bepaalde username
-//Tip: req.params.username
-//(zonder mongoDb) Response kan zijn: {“message”: “GETTING message for username username”}
+  //(met mongoDb) Kan berichten teruggeven voor een bepaalde username
+  //Tip: req.params.username
+  //(zonder mongoDb) Response kan zijn: {“message”: “GETTING message for username username”}
 }) 
 
 app.listen(port, () => {
