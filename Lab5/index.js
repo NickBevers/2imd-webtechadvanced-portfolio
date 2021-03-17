@@ -39,7 +39,10 @@ app.post("/api/v1/messages/:user", (req, res) => {
 }) 
 
 app.put("/api/v1/messages/:id", (req, res) => {
-  res.send("/api/v1/messages")
+  let id = req.params.id;
+  res.json({
+    message: `UPDATING a message with id ${id}`
+  })
   //(met mongoDb) Kan een JSON-object ontvangen en een specifiek bericht updaten en geeft die nieuwe bericht terug
   //(zonder MongoDb) Response kan zijn: {“message”: “UPDATING a message with id id”}
 })
