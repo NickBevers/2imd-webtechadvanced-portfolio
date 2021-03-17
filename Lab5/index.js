@@ -18,7 +18,10 @@ app.get("/api/v1/messages", (req, res) => {
 }) 
 
 app.get("/api/v1/messages/:id", (req, res) => {
-  res.send("/api/v1/messages")
+  let id = req.params.id;
+  res.json({
+    message: `GETTING message with ID ${id}`
+  })
   //(met mongoDb) Geeft message met specifiek id terug
   //(zonder mongoDb) Response kan zijn : { “message”: “GETTING message with ID id” }
 
