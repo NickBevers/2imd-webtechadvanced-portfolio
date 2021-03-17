@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const querystring = require('querystring');
 
 app.get("/", (req, res) => {
   app.set("view engine", "pug");
@@ -14,7 +15,6 @@ app.get("/api/v1/messages", (req, res) => {
   //Geef messages terug (met mongoDB)
   //(zonder mongoDb) Response kan zijn : { “message”: “GETTING messages” }
   //geef ook effectief messages terug uit je databank (of statisch)
-
 }) 
 
 app.get("/api/v1/messages/:id", (req, res) => {
@@ -57,11 +57,14 @@ app.delete("/api/v1/messages/:id", (req, res) => {
 }) 
 
 app.get("/api/v1/messages?user=username", (req, res) => {
-  res.send("/api/v1/messages")
+  let user = req.query.user;
+  res.json({
+    message: `GETTING a new message for user ${user}`
+  })
   //(met mongoDb) Kan berichten teruggeven voor een bepaalde username
   //Tip: req.params.username
   //(zonder mongoDb) Response kan zijn: {“message”: “GETTING message for username username”}
-}) 
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
