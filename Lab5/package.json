@@ -2,7 +2,7 @@
   "name": "lab5",
   "version": "0.0.0",
   "engines": {
-    "node": "14.16.0"
+    "node": "14.x"
   },
   "private": true,
   "scripts": {
