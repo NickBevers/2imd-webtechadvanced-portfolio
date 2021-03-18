@@ -65,8 +65,6 @@ function deleteId(req, res){
 }
 
 
-
-
 module.exports.getMessage = getMessage;
 module.exports.getId = getId;
 module.exports.setMessage = setMessage;
