@@ -33,15 +33,17 @@ function getId(req, res){
 }
 
 function setMessage(req, res){
-    let user = req.params.user;
-    res.json({
-        status: "Succes",
-        message: `POSTING a new message for user ${user}`
-    })
-    //(met mongoDb) Kan een JSON-object ontvangen en bewaren en geeft het nieuwe document terug
-    //Body: { message: { “user”: “Pikachu”, “text”: “nodejs isn’t hard, or is it?” } }
-    //(zonder mongoDb) Response kan zijn: {“message”: “POSTING a new message for user Pikachu”}
-    //Zorg dat je de naam dynamisch kan invullen en in het antwoord teruggeeft
+    if(req.query.user != null){
+        let user = req.params.user;
+        res.json({
+            status: "Succes",
+            message: `POSTING a new message for user ${user}`
+        })
+        //(met mongoDb) Kan een JSON-object ontvangen en bewaren en geeft het nieuwe document terug
+        //Body: { message: { “user”: “Pikachu”, “text”: “nodejs isn’t hard, or is it?” } }
+        //(zonder mongoDb) Response kan zijn: {“message”: “POSTING a new message for user Pikachu”}
+        //Zorg dat je de naam dynamisch kan invullen en in het antwoord teruggeeft
+    }
 }
 
 function putId(req, res){
